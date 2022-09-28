@@ -1,21 +1,21 @@
-import React, {useEffect} from 'react';
+import React, {lazy, Suspense} from 'react';
+import {Routes, Route} from 'react-router-dom';
 import './app.scss';
-import HomePage from './home/HomePage';
-import {Routes, Route} from "react-router-dom";
-import {useTranslation} from "react-i18next";
 
 function App() {
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    i18n.changeLanguage('en');
-  }, []);
+  const HomePage = lazy(() => import('./home/HomePage'));
+  const AboutPage = lazy(() => import('./about/About'));
+  const ContactUsPage = lazy(() => import('./contactUs/ContactUs'));
 
   return (
     <div className="app">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
+      <Suspense fallback={<div>...Loading</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactUsPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }

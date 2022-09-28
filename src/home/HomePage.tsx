@@ -1,16 +1,19 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import './styles/home.scss';
-import LanguagePicker from "../sharedComponents/LanguagePicker/LanguagePicker";
+import {useNavigate} from "react-router-dom";
+import {Button} from "react-bootstrap";
 
 const HomePage = () => {
-  const { t } = useTranslation();
+  let navigate = useNavigate();
+
+  const handleOnClick = () => {
+    navigate('about');
+  };
 
   return (
     <div  className="home-page">
-      <LanguagePicker />
-      <h1 className="home-page--title">{t('HOME_PAGE.TITLE')}</h1>
-      <div className="home-page--description">{t('HOME_PAGE.DESCRIPTION.PART2')}</div>
+      <h2>Home Page</h2>
+      <Button onClick={handleOnClick} >About</Button>
     </div>
   )
 }

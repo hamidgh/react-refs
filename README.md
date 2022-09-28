@@ -1,10 +1,9 @@
-# i18n - React - Change Language
+# Code Splitting - Lazy Loading
 
-You can watch step by step of this tutorial from this link [YouTube Video](https://youtu.be/GC8AmRKfTHM).
+You can watch step by step of this tutorial from this link [YouTube Video](https://youtu.be/xXfkKg63cEs).
 
 ## useful links that were used in tutorial
-1- [i18n-next documentation](https://react.i18next.com/latest/using-with-hooks) \
-2- [Bootstrap DorpDown](https://react-bootstrap.netlify.app/components/dropdowns/)
+1- [Code Splitting documentation](https://reactjs.org/docs/code-splitting.html) \
 
 ## How to run the app
 1- In the project directory, run: `npm install`\
