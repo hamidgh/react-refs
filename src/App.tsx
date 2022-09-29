@@ -1,21 +1,19 @@
-import React, {lazy, Suspense} from 'react';
+import React from 'react';
 import {Routes, Route} from 'react-router-dom';
+import HomePage from "./home/HomePage";
+import AboutPage from "./about/About";
 import './app.scss';
+import ErrorBoundary from "./error/ErrorBoundaries";
 
 function App() {
-  const HomePage = lazy(() => import('./home/HomePage'));
-  const AboutPage = lazy(() => import('./about/About'));
-  const ContactUsPage = lazy(() => import('./contactUs/ContactUs'));
-
   return (
     <div className="app">
-      <Suspense fallback={<div>...Loading</div>}>
+      <ErrorBoundary>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactUsPage />} />
         </Routes>
-      </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }
