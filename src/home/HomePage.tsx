@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import './styles/home.scss';
-import {useNavigate} from "react-router-dom";
-import {Button} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 
 const HomePage = () => {
-  let navigate = useNavigate();
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleOnClick = () => {
-    navigate('about');
-  };
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   return (
-    <div  className="home-page">
-      <h2>Home Page</h2>
-      <Button onClick={handleOnClick} >About</Button>
-    </div>
+    <Form>
+      <Form.Group className="mb-3">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="text" placeholder="Enter email" ref={inputRef}/>
+
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password"  />
+      </Form.Group>
+    </Form>
   )
 }
 

@@ -1,9 +1,9 @@
-# Error Boundaries
+# React refs
 
-You can watch step by step of this tutorial from this link [YouTube Video](https://youtu.be/ud1kRuszDZA).
+You can watch step by step of this tutorial from this link [YouTube Video](https://youtu.be/ABCjHiTpcn8).
 
 ## useful links that were used in tutorial
-1- [Error Boundaries](https://reactjs.org/docs/error-boundaries.html)
+1- [React refs and Dom](https://reactjs.org/docs/refs-and-the-dom.html)
 
 ## How to run the app
 1- In the project directory, run: `npm install`\
